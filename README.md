@@ -22,7 +22,7 @@ An independent Excel-based analysis of historical ARV medicine shipment records,
 | Recorded commodity value | US$282.65 million |
 | Tools | Microsoft Excel, Power Query, PivotTables, formulas, charts, conditional formatting, Form Controls |
 
-**Data source:** Public historical USAID supply-chain / SCMS shipment data. The precise original dataset link will be added for full reproducibility.
+**Original raw dataset:** [SCMS Delivery History Dataset (CSV)](https://github.com/jrcinco/supply-chain-shipment-price-data/blob/master/SCMS_Delivery_History_Dataset.csv), sourced through the workbook's Power Query `raw_data` query. **Exact source and transformation script:** [`power_query/Section1.m`](power_query/Section1.m). This script was extracted from the workbook's embedded Power Query mashup, not recreated.
 
 ## Findings at a glance
 
@@ -34,6 +34,15 @@ An independent Excel-based analysis of historical ARV medicine shipment records,
 | Country comparison | Burundi **48.57%** on time across 35 deliveries; Rwanda **91.09%** across 303 |
 | Procurement-price trend | Efavirenz 600 mg, 30 tablets: weighted pack price **$16.75 in 2006** to **$3.16 in 2015** |
 | Supply concentration | From RDC represented **70.22% of recorded commodity value** and **92.53% of late deliveries** |
+
+## Data and reproducibility
+
+- [Original raw-data CSV](https://github.com/jrcinco/supply-chain-shipment-price-data/blob/master/SCMS_Delivery_History_Dataset.csv) — the publicly hosted unfiltered dataset loaded by Power Query; linked rather than duplicated here.
+- [Exact Power Query M script](power_query/Section1.m) — includes the `raw_data` download query and `ARV_Clean_Data` cleaning query (seven-country and ARV filters, field selection, type conversion, date handling, and derived fields).
+- [Completed Excel workbook](USAID%20Supply%20Chain%20Analytics.xlsx) — interactive dashboard, calculations, and embedded queries.
+- [Dashboard screenshot](Dashboard.png) — view without opening Excel.
+
+**To reproduce:** Open the workbook in desktop Excel, open **Data → Queries & Connections**, and inspect the queries in Power Query Editor. The source URL in `raw_data` requires internet access. The standalone `.m` file documents the exact transformations used in the workbook. Delivery-level counting and executive visualizations are completed within Excel.
 
 ## Approach
 
@@ -58,14 +67,13 @@ The **From RDC** channel is the leading recorded delivery-reliability concern: i
 
 ## Project deliverables
 
-- **Excel workbook:** cleaned data, calculations, interactive dashboard, and management report.
-- **Dashboard screenshot:** a quick visual preview of key findings.
-  
-*The workbook and screenshot will be added as separate repository files.*
+- **[Excel workbook](USAID%20Supply%20Chain%20Analytics.xlsx):** cleaned data, calculations, interactive dashboard, and management report.
+- **[Dashboard screenshot](Dashboard.png):** visual preview.
+- **[Original Power Query M code](power_query/Section1.m):** reproducible extraction and cleaning logic.
 
 ## Dashboard preview
 
-*Dashboard preview will appear here after `dashboard.png` is uploaded.*
+![USAID ARV supply chain performance dashboard](Dashboard.png)
 
 ## Project context
 
